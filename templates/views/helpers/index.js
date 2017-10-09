@@ -2,7 +2,6 @@ var moment = require('moment');
 var _ = require('lodash');
 var hbs = require('handlebars');
 var keystone = require('keystone');
-var cloudinary = require('cloudinary');
 
 // Collection of templates to interpolate
 var linkTemplate = _.template('<a href="<%= url %>"><%= text %></a>');
@@ -161,30 +160,30 @@ module.exports = function () {
 	//
 	// Returns an src-string for a cloudinary image
 
-	_helpers.cloudinaryUrl = function (context, options) {
+	//_helpers.cloudinaryUrl = function (context, options) {
 
 		// if we dont pass in a context and just kwargs
 		// then `this` refers to our default scope block and kwargs
 		// are stored in context.hash
-		if (!options && context.hasOwnProperty('hash')) {
+	//	if (!options && context.hasOwnProperty('hash')) {
 			// strategy is to place context kwargs into options
-			options = context;
+			//options = context;
 			// bind our default inherited scope into context
-			context = this;
-		}
+		//	context = this;
+	//	}
 
 		// safe guard to ensure context is never null
-		context = context === null ? undefined : context;
+	//	context = context === null ? undefined : context;
 
-		if ((context) && (context.public_id)) {
-			options.hash.secure = keystone.get('cloudinary secure') || false;
-			var imageName = context.public_id.concat('.', context.format);
-			return cloudinary.url(imageName, options.hash);
-		}
-		else {
-			return null;
-		}
-	};
+	//	if ((context) && (context.public_id)) {
+	//		options.hash.secure = keystone.get('cloudinary secure') || false;
+	//		var imageName = context.public_id.concat('.', context.format);
+	//		return cloudinary.url(imageName, options.hash);
+	//	}
+	//	else {
+	//		return null;
+	//	}
+	//};
 
 	// ### Content Url Helpers
 	// KeystoneJS url handling so that the routes are in one place for easier
