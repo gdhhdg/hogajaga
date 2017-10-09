@@ -1,0 +1,23 @@
+{{!< default}}
+<div class="btn-group" role="group" aria-label="Basic example">
+	<button type="button" class="btn btn-secondary" id="photoButton">Photos</button>
+	<button type="button" class="btn btn-secondary" id="videoButton">Videos</button>
+</div>
+
+<div class="videowrapper">
+	{{#each iframes}}
+		<iframe src="{{iframe}}" frameborder="0"></iframe>
+	{{else}}
+		<h1>No Videos</h1>
+	{{/each}}
+</div>
+
+
+<div class="pics">
+
+	{{#each imgs}}
+		<img class="eachImg" src='{{link}}'>
+	{{/each}}
+
+</div>
+
