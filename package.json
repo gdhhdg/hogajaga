@@ -29,7 +29,7 @@
     "compile": "stylus -w public/styles/site.styl -o public/styles/site.css"
   },
   "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
+    "node": "8.4.x",
+    "npm": "5.4.x"
   }
 }
